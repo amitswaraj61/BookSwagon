@@ -15,6 +15,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace BookSwagon
 {
@@ -47,7 +48,7 @@ namespace BookSwagon
             driver.Manage().Window.Maximize();
 
             //Enter the url
-            driver.Url = "https://www.bookswagon.com/login";
+            driver.Url = ConfigurationManager.AppSettings["URL"];
         }
        [OneTimeTearDown]
         public void Close()
@@ -69,7 +70,7 @@ namespace BookSwagon
                 test.Fail(MarkupHelper.CreateLabel(TestContext.CurrentContext.Test.Name, ExtentColor.Red));
                 test.Log(Status.Fail, "Test Failed");
                 log.Error("Test Failed");
-               // SendEmailMain.SendEmail(exception.Message.Trim(), exception.StackTrace);
+                SendEmailMain.SendEmail(error,TestContext.CurrentContext.Result.StackTrace);
             }
             else if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Passed)
             {
