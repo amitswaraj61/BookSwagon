@@ -79,6 +79,7 @@ namespace BookSwagon
                 test.Pass(MarkupHelper.CreateLabel(TestContext.CurrentContext.Test.Name, ExtentColor.Green));
                 test.Log(Status.Pass, "Test pass");
             }
+            driver.Navigate().Refresh(); // every test must refresh the webpage
             extent.Flush();
         }
     }

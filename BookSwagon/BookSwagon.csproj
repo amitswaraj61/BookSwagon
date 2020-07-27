@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="BookSwagonNegative.cs" />
     <Compile Include="BrokenLinkTest.cs" />
     <Compile Include="BrowserFactory\BrowserFactoryException.cs" />
     <Compile Include="BrowserFactory\BrowserFactoryMain.cs" />
