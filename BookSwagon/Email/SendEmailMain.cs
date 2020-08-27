@@ -1,16 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿//-----------------------------------------------------------------------
+// <copyright file="SendEmailMain.cs" company="BridgeLabz">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+//-----------------------------------------------------------------------
+
+using System;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookSwagon.Email
 {
+    /// <summary>
+    /// create Send Email main class
+    /// </summary>
     class SendEmailMain
     {
-      public static Credentials credentials = new Credentials();
+        /// <summary>
+        /// create object of Credentials class
+        /// </summary>
+       public static Credentials credentials = new Credentials();
+
+        /// <summary>
+        /// create Send Email method
+        /// </summary>
+        /// <param name="Subject"></param>
+        /// <param name="contentBody"></param>
         public static void SendEmail(String Subject, String contentBody)
         {
             MailMessage mail = new MailMessage();

@@ -1,62 +1,71 @@
-﻿using AventStack.ExtentReports;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Base.cs" company="BridgeLabz">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+//-----------------------------------------------------------------------
+
+using AventStack.ExtentReports;
 using AventStack.ExtentReports.MarkupUtils;
-using AventStack.ExtentReports.Reporter;
 using BookSwagon.BrowserFactory;
 using BookSwagon.Email;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Configuration;
 
 namespace BookSwagon
-{
+{/// <summary>
+/// create Base class
+/// </summary>
     public class Base
     {
+        /// <summary>
+        /// create IWebDriver
+        /// </summary>
         public IWebDriver driver;
 
-        //create Instance of Browser Factory
+        /// <summary>
+        /// create object of Browser Factory Main class
+        /// </summary>
         BrowserFactoryMain browser = new BrowserFactoryMain();
 
-        //create Instance of Extent Report
+        /// <summary>
+        /// create object of Report extent class
+        /// </summary>
         public static ExtentReports extent = ReportExtent.GetExtentReport();
         public static ExtentTest test;
 
-        //craete instance of Log4net
+        /// <summary>
+        /// create object of Log4net
+        /// </summary>
         public static readonly log4net.ILog log =
         log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-
+        /// <summary>
+        /// create one time setup to initialize browser
+        /// </summary>
         [OneTimeSetUp]
         public void Initilize()
         {
-
-            driver = browser.InitBrowser("chrome"); //Initialize chrome driver
-
-            //Using implicitly wait 
+            driver = browser.InitBrowser("chrome");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-
-            //Maximizing the window
             driver.Manage().Window.Maximize();
-
-            //Enter the url
             driver.Url = ConfigurationManager.AppSettings["URL"];
         }
+        
+        /// <summary>
+        /// create one time tear down to quit the browser
+        /// </summary>
        [OneTimeTearDown]
         public void Close()
-        {
-            Thread.Sleep(2000);
-
-            driver.Quit();
+        { 
+           driver.Quit();
         }
+
+        /// <summary>
+        /// create tear down to take screenshot,generate extent report and send email
+        /// </summary>
         [TearDown]
         public void ExtentFlush()
         {
@@ -79,7 +88,7 @@ namespace BookSwagon
                 test.Pass(MarkupHelper.CreateLabel(TestContext.CurrentContext.Test.Name, ExtentColor.Green));
                 test.Log(Status.Pass, "Test pass");
             }
-            driver.Navigate().Refresh(); // every test must refresh the webpage
+            driver.Navigate().Refresh(); // every test must refresh the webpage ..use in negative test
             extent.Flush();
         }
     }

@@ -1,23 +1,28 @@
-﻿using AventStack.ExtentReports;
-using AventStack.ExtentReports.Reporter;
-using BookSwagon.Email;
+﻿//-----------------------------------------------------------------------
+// <copyright file="BookSwagonTest.cs" company="BridgeLabz">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+//-----------------------------------------------------------------------
+
 using BookSwagon.Pages;
 using NUnit.Framework;
-using NUnit.Framework.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookSwagon
 {
+    /// <summary>
+    /// create BookSwagonTest class
+    /// </summary>
     [Parallelizable]
     class BookSwagonTest : Base
     {
+        /// <summary>
+        /// create object of Credentials class
+        /// </summary>
         Credentials credentails = new Credentials();
 
+        /// <summary>
+        /// create Valid Login test
+        /// </summary>
         [Test,Order(1)]
         public void ValidLogin()
         {
@@ -29,6 +34,10 @@ namespace BookSwagon
             Assert.AreEqual(expectedResult, actualResult);
             log.Info("Test Pass");
         }
+
+        /// <summary>
+        /// create Search Book test
+        /// </summary>
         [Test, Order(2)]
         public void SearchBookTest()
         {
@@ -40,6 +49,10 @@ namespace BookSwagon
             Assert.AreEqual(url, actual);
             log.Info("Test Pass");
         }
+
+        /// <summary>
+        /// create Buy Book Test
+        /// </summary>
         [Test, Order(3)]
         public void BuyBookTest()
         {
@@ -51,6 +64,10 @@ namespace BookSwagon
             Assert.AreEqual(url, actual);
             log.Info("Test Pass");
         }
+
+        /// <summary>
+        /// create Shipping Address Test
+        /// </summary>
         [Test, Order(4)]
         public void ShippingAddressTest()
         {
@@ -62,6 +79,10 @@ namespace BookSwagon
             Assert.AreEqual(url, actual);
             log.Info("Test Pass");
         }
+
+        /// <summary>
+        /// create Review Order test
+        /// </summary>
         [Test, Order(5)]
         public void ReviewOderTest()
         {
@@ -74,6 +95,9 @@ namespace BookSwagon
             log.Info("Test Pass");
         }
 
+        /// <summary>
+        /// create Logout test
+        /// </summary>
         [Test, Order(6)]
         public void LogoutTest()
         {

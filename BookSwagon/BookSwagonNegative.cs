@@ -1,15 +1,31 @@
-﻿using BookSwagon.Pages;
+﻿//-----------------------------------------------------------------------
+// <copyright file="BookSwagonNegative.cs" company="BridgeLabz">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+//-----------------------------------------------------------------------
+
+using BookSwagon.Pages;
 using NUnit.Framework;
 using System.Configuration;
 
 namespace BookSwagon
 {
+    /// <summary>
+    /// craete BookSwagonNegative class
+    /// </summary>
   
     [TestFixture]
     [Parallelizable]
-    class BookSwagonNegative:Base
+   public class BookSwagonNegative:Base
     {
+        /// <summary>
+        /// create object of Credentials class
+        /// </summary>
         Credentials credentails = new Credentials();
+
+        /// <summary>
+        /// craete Invalid user name test
+        /// </summary>
         [Test,Order(1)]
         public void GivenInvalidUserName_ShouldReturnInvalidEmailMessage()
         {
@@ -22,6 +38,9 @@ namespace BookSwagon
             log.Info("Test Pass");
         }
 
+        /// <summary>
+        /// craete Not given password test
+        /// </summary>
         [Test,Order(2)]
         public void NotGivenPassword_ShouldReturnRequiredMessage()
         {
@@ -34,6 +53,9 @@ namespace BookSwagon
             log.Info("Test Pass");
         }
 
+        /// <summary>
+        /// create Invalid password test
+        /// </summary>
         [Test,Order(3)]
         public void GivenInvalidPassword_ShouldReturnEnterCorrectUserNameAndPaasword()
         {
@@ -45,6 +67,10 @@ namespace BookSwagon
             Assert.AreEqual(expectedResult, actualResult);
             log.Info("Test Pass");
         }
+
+        /// <summary>
+        /// create Invalid email test
+        /// </summary>
         [Test,Order(4)]
         public void GivenInvalidEmail_ShouldReturnEnterCorrectUserNameAndPaasword()
         {

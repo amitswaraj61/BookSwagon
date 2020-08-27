@@ -1,17 +1,23 @@
-﻿using OpenQA.Selenium;
+﻿//-----------------------------------------------------------------------
+// <copyright file="BrowserFactoryMain.cs" company="BridgeLabz">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+//-----------------------------------------------------------------------
+
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace BookSwagon.BrowserFactory
 {
+    /// <summary>
+    /// create Browser Factory main class
+    /// </summary>
     class BrowserFactoryMain
     {
+        /// <summary>
+        /// create IWebDriver
+        /// </summary>
         IWebDriver driver;
         public IWebDriver InitBrowser(string browser)
         {
@@ -44,7 +50,6 @@ namespace BookSwagon.BrowserFactory
             {
                 throw new BrowserFactoryException(exception.Message, BrowserFactoryException.ExceptionType.NULL_EXCEPTION);
             }
-
         }
     }
 }

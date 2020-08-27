@@ -1,15 +1,30 @@
-﻿using OpenQA.Selenium;
+﻿//-----------------------------------------------------------------------
+// <copyright file="ShippingAddress.cs" company="BridgeLabz">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+//-----------------------------------------------------------------------
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
-using System;
 using System.Configuration;
 
 namespace BookSwagon.Pages
 {
-    class ShippingAddess
+    /// <summary>
+    /// create ShippingAddress class
+    /// </summary>
+    public class ShippingAddess
     {
+        /// <summary>
+        /// create IWebDriver 
+        /// </summary>
         public IWebDriver driver;
+
+        /// <summary>
+        /// create ShippingAddress constructor
+        /// </summary>
+        /// <param name="driver"></param>
         public ShippingAddess(IWebDriver driver)
         {
             this.driver = driver;
@@ -17,39 +32,34 @@ namespace BookSwagon.Pages
         }
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Continue')]")]
-
         public IWebElement continueButton;
 
         [FindsBy(How = How.Id, Using = "ctl00_cpBody_txtNewRecipientName")]
-
         public IWebElement receiptName;
 
         [FindsBy(How = How.XPath, Using = "//div[4]//div[2]//textarea[1]")]
-
         public IWebElement address;
 
         [FindsBy(How = How.Id, Using = "ctl00_cpBody_ddlNewState")]
-
         public IWebElement state;
 
         [FindsBy(How = How.Id, Using = "ctl00_cpBody_txtNewCity")]
-
         public IWebElement city;
 
         [FindsBy(How = How.Id, Using = "ctl00_cpBody_txtNewPincode")]
-
         public IWebElement pinCode;
 
         [FindsBy(How = How.Id, Using = "ctl00_cpBody_txtNewMobile")]
-
         public IWebElement mobileNumber;
 
         [FindsBy(How = How.Id, Using = "ctl00_cpBody_imgSaveNew")]
-
         public IWebElement saveAndContinue;
+
+        /// <summary>
+        /// create ShippingAddressData method
+        /// </summary>
         public void ShippingAddessData()
         {
-
             continueButton.Click();
             Thread.Sleep(2000);
             receiptName.Click();
@@ -78,11 +88,7 @@ namespace BookSwagon.Pages
             Thread.Sleep(3000);
             saveAndContinue.Click();
             Thread.Sleep(3000);
-           
         }
     }
 }
-
-
-
-
+ 

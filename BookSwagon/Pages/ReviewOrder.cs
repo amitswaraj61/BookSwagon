@@ -1,17 +1,29 @@
-﻿using OpenQA.Selenium;
+﻿//-----------------------------------------------------------------------
+// <copyright file="ReviewOrder.cs" company="BridgeLabz">
+// Copyright (c) 2020 All Rights Reserved
+// </copyright>
+//-----------------------------------------------------------------------
+
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace BookSwagon.Pages
 {
-    class ReviewOrder
+    /// <summary>
+    /// create Review order class
+    /// </summary>
+   public class ReviewOrder
     {
+        /// <summary>
+        /// create IWebDriver
+        /// </summary>
         public IWebDriver driver;
+
+        /// <summary>
+        /// create Review order constructor
+        /// </summary>
+        /// <param name="driver"></param>
         public ReviewOrder(IWebDriver driver)
         {
             this.driver = driver;
@@ -19,9 +31,11 @@ namespace BookSwagon.Pages
         }
 
         [FindsBy(How = How.Id, Using = "ctl00_cpBody_ShoppingCart_lvCart_savecontinue")]
-
         public IWebElement saveAndContinue;
 
+        /// <summary>
+        /// create Review order check method
+        /// </summary>
        public void ReviewOrderCheck()
         {
             saveAndContinue.Click();
