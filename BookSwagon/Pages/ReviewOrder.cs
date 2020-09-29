@@ -24,6 +24,7 @@ namespace BookSwagon.Pages
         /// create Review order constructor
         /// </summary>
         /// <param name="driver"></param>
+        [System.Obsolete]
         public ReviewOrder(IWebDriver driver)
         {
             this.driver = driver;

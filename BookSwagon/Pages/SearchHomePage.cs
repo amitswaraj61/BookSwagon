@@ -23,6 +23,7 @@ namespace BookSwagon.Pages
         /// create SearchHomePage constructor
         /// </summary>
         /// <param name="driver"></param>
+        [System.Obsolete]
         public SearchHomePage(IWebDriver driver)
         {
             this.driver = driver;

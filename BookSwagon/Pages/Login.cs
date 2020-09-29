@@ -25,6 +25,8 @@ namespace BookSwagon.Pages
         /// create Login constructor
         /// </summary>
         /// <param name="driver"></param>
+
+        [Obsolete]
         public Login(IWebDriver driver)
         {
             this.driver = driver;

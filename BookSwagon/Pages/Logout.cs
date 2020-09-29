@@ -24,6 +24,8 @@ namespace BookSwagon.Pages
         /// create Logout method
         /// </summary>
         /// <param name="driver"></param>
+
+        [System.Obsolete]
         public Logout(IWebDriver driver)
         {
             this.driver = driver;

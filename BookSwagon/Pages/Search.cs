@@ -24,6 +24,7 @@ namespace BookSwagon.Pages
         /// create Search constructor
         /// </summary>
         /// <param name="driver"></param>
+        [System.Obsolete]
         public Search(IWebDriver driver)
         {
             this.driver = driver;

@@ -25,6 +25,7 @@ namespace BookSwagon.Pages
         /// create ShippingAddress constructor
         /// </summary>
         /// <param name="driver"></param>
+        [System.Obsolete]
         public ShippingAddess(IWebDriver driver)
         {
             this.driver = driver;
