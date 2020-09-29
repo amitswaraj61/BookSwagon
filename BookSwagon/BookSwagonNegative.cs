@@ -27,7 +27,9 @@ namespace BookSwagon
         /// craete Invalid user name test
         /// </summary>
         [Test,Order(1)]
+        [System.Obsolete]
         public void GivenInvalidUserName_ShouldReturnInvalidEmailMessage()
+
         {
             log.Info("valid Login Test Started");
             Login login = new Login(driver);
@@ -42,6 +44,7 @@ namespace BookSwagon
         /// craete Not given password test
         /// </summary>
         [Test,Order(2)]
+        [System.Obsolete]
         public void NotGivenPassword_ShouldReturnRequiredMessage()
         {
             log.Info("valid Login Test Started");
@@ -57,6 +60,7 @@ namespace BookSwagon
         /// create Invalid password test
         /// </summary>
         [Test,Order(3)]
+        [System.Obsolete]
         public void GivenInvalidPassword_ShouldReturnEnterCorrectUserNameAndPaasword()
         {
             log.Info("valid Login Test Started");
@@ -72,6 +76,7 @@ namespace BookSwagon
         /// create Invalid email test
         /// </summary>
         [Test,Order(4)]
+        [System.Obsolete]
         public void GivenInvalidEmail_ShouldReturnEnterCorrectUserNameAndPaasword()
         {
             log.Info("valid Login Test Started");

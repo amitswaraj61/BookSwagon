@@ -24,6 +24,7 @@ namespace BookSwagon
         /// create Valid Login test
         /// </summary>
         [Test,Order(1)]
+        [System.Obsolete]
         public void ValidLogin()
         {
             log.Info("valid Login Test Started");
@@ -39,6 +40,7 @@ namespace BookSwagon
         /// create Search Book test
         /// </summary>
         [Test, Order(2)]
+        [System.Obsolete]
         public void SearchBookTest()
         {
             log.Info("search book Test Started");
@@ -54,6 +56,7 @@ namespace BookSwagon
         /// create Buy Book Test
         /// </summary>
         [Test, Order(3)]
+        [System.Obsolete]
         public void BuyBookTest()
         {
             log.Info("Buy Book Test Started");
@@ -69,6 +72,7 @@ namespace BookSwagon
         /// create Shipping Address Test
         /// </summary>
         [Test, Order(4)]
+        [System.Obsolete]
         public void ShippingAddressTest()
         {
             log.Info("Shipping Address Test Started");
@@ -84,6 +88,7 @@ namespace BookSwagon
         /// create Review Order test
         /// </summary>
         [Test, Order(5)]
+        [System.Obsolete]
         public void ReviewOderTest()
         {
             log.Info("Review Order Test Started");
@@ -99,6 +104,7 @@ namespace BookSwagon
         /// create Logout test
         /// </summary>
         [Test, Order(6)]
+        [System.Obsolete]
         public void LogoutTest()
         {
             log.Info("Logout Test Started");
